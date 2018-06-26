@@ -4,6 +4,7 @@ section.select {
     padding: 0 20px;
     font-size: 1.2em;
     line-height: 1.5;
+    text-align: center;
 
     @include full-block();
 
@@ -14,6 +15,7 @@ section.select {
     section.basic-content {
         padding: 0;
         font-size: inherit;
+        text-align: left;
     }
 
     div.select {
