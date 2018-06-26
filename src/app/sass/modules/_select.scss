@@ -1,7 +1,6 @@
 section.select {
     max-width: 1024px;
     margin: 0 auto;
-    text-align: center;
     padding: 0 20px;
     font-size: 1.2em;
     line-height: 1.5;
@@ -10,6 +9,11 @@ section.select {
 
     *, *:after, *:before{
         @include box-sizing(border-box);
+    }
+
+    section.basic-content {
+        padding: 0;
+        font-size: inherit;
     }
 
     div.select {
@@ -74,6 +78,7 @@ section.select {
             overflow: auto;
             background-color: white;
             z-index: 2;
+            text-align: center;
 
             @include opacity(0);
             @include transition(opacity .5s ease);
