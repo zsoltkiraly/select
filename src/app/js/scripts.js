@@ -21,17 +21,6 @@ var select = function() {
         };
     }
 
-    function mergeObject(userConfig, configUser){
-        var objMerge = {};
-        for (var objectVariable in userConfig) { 
-            objMerge[objectVariable] = userConfig[objectVariable]; 
-        }
-        for (var objectVariable in configUser) { 
-            objMerge[objectVariable] = configUser[objectVariable]; 
-        }
-        return objMerge;
-    }
-
     function show(element, placeholder) {
         element.classList.remove('hide');
         placeholder.setAttribute('arrow', 'active');
@@ -55,28 +44,34 @@ var select = function() {
             for(; i < lenDOM; i++) {
 
                 var containers = globalClass[i],
-                    selects = containers.querySelector('select'),
-                    selectName = selects.getAttribute('name'),
-                    selectId = selects.getAttribute('id');
+                    selects = containers.querySelector('select.real-select');
 
-                var newSelectDiv = document.createElement('DIV');
+                if(selects) {
+                    var selectName = selects.getAttribute('name'),
+                        selectId = selects.getAttribute('id');
 
-                newSelectDiv.setAttribute('data-name', selectName);
-                newSelectDiv.setAttribute('data-id', selectId);
-                newSelectDiv.setAttribute('class', 'select-element');
-                containers.appendChild(newSelectDiv);
+                    var newSelectDiv = document.createElement('DIV');
 
-                newSelectDiv.innerHTML = '<div class="select-placeholder"></div><div class="select-options"><ul></ul></div>';
+                    newSelectDiv.setAttribute('data-name', selectName);
+                    newSelectDiv.setAttribute('data-id', selectId);
+                    newSelectDiv.setAttribute('class', 'select-element');
+                    containers.appendChild(newSelectDiv);
 
-                var ulDOM = newSelectDiv.querySelector('ul');
-                
-                var options = selects.querySelectorAll('option'),
-                    stop = 0;
+                    newSelectDiv.innerHTML = '<div class="select-placeholder"></div><div class="select-options"><ul></ul></div>';
 
-                while (stop < options.length) {
-                    ulDOM.innerHTML += '<li class="selected-element"><span></span></li>';
-                    stop++;
+                    var ulDOM = newSelectDiv.querySelector('ul');
+                    
+                    var options = selects.querySelectorAll('option'),
+                        stop = 0;
+
+                    while (stop < options.length) {
+                        ulDOM.innerHTML += '<li class="selected-element"><span></span></li>';
+                        stop++;
+                    }
+
+                    selects.classList.remove('real-select');
                 }
+
             }
         }
 
