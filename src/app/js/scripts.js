@@ -124,7 +124,7 @@ var select = function() {
 
                     var placeholder = obj.closest('.select-element').querySelector('.select-placeholder'),
                         liElement = obj.closest('ul').querySelectorAll('li'),
-                        optionElement = obj.closest('.select').querySelectorAll('select option'),
+                        optionElement = obj.closest('.' + config.selectGlobalClass + '').querySelectorAll('select option'),
                         selectOptions = obj.closest('.select-options');
 
                     if(config.selectOpenAlways == false) {
