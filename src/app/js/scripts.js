@@ -1,6 +1,6 @@
 /*
 Select - Code by Zsolt Kiraly
-v1.0.9 - 2018-03-29
+v1.1.0 - 2018-10-29
 */
 
 var select = function() {
@@ -22,18 +22,19 @@ var select = function() {
     }
 
     function show(element, placeholder) {
-        element.classList.remove('hide');
         placeholder.setAttribute('arrow', 'active');
 
         setTimeout(function() {
-            element.classList.add('show');
+            element.className = 'select-options show';
         }, 50);
     }
 
     function hide(element, placeholder) {
-        element.classList.remove('show');
         placeholder.removeAttribute('arrow');
-        element.classList.add('hide');
+
+        setTimeout(function() {
+            element.className = 'select-options hide';
+        }, 50);
     }
 
     function selectDOM(globalClass, config) {
