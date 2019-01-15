@@ -1,6 +1,6 @@
 /*
 Select - Code by Zsolt Kiraly
-v1.1.0 - 2018-10-29
+v1.1.0 - 2019-01-15
 */
 
 var select = function() {
@@ -47,6 +47,12 @@ var select = function() {
                 var containers = globalClass[i],
                     selects = containers.querySelector('select.real-select');
 
+                var selectElementRemove = containers.querySelector('.select-element');
+
+                if(selectElementRemove) {
+                    containers.removeChild(selectElementRemove);
+                }
+
                 if(selects) {
                     var selectName = selects.getAttribute('name'),
                         selectId = selects.getAttribute('id');
@@ -69,10 +75,7 @@ var select = function() {
                         ulDOM.innerHTML += '<li class="selected-element"><span></span></li>';
                         stop++;
                     }
-
-                    selects.classList.remove('real-select');
                 }
-
             }
         }
 
