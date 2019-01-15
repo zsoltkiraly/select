@@ -69,7 +69,6 @@ var select = function() {
 
                     var newSelectDiv = document.createElement('DIV');
 
-                    newSelectDiv.setAttribute('data-name', selectName);
                     newSelectDiv.setAttribute('data-id', selectId);
                     newSelectDiv.setAttribute('class', 'select-element');
                     containers.appendChild(newSelectDiv);
