@@ -37,6 +37,14 @@ var select = function() {
         }, 50);
     }
 
+    function setFirst(select) {
+        if(select) {
+            if(select.querySelectorAll('option[selected="selected"]').length == 0) {
+                select.querySelectorAll('option')[0].setAttribute('selected','selected');
+            }
+        }
+    }
+
     function selectDOM(globalClass, config) {
         var i = 0,
             lenDOM = globalClass.length;
@@ -52,6 +60,8 @@ var select = function() {
                 if(selectElementRemove) {
                     containers.removeChild(selectElementRemove);
                 }
+
+                setFirst(selects);
 
                 if(selects) {
                     var selectName = selects.getAttribute('name'),
