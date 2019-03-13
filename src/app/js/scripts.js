@@ -5,6 +5,28 @@ v1.1.0 - 2019-01-15
 
 var select = function() {
 
+    function signatura() {
+        if (window['console']) {
+            const text = {
+                black: '%c     ',
+                blue: '%c   ',
+                author: '%c  Zsolt Király  ',
+                github: '%c  https://zsoltkiraly.com/'
+            }
+
+            const style = {
+                black: 'background: #282c34',
+                blue: 'background: #61dafb',
+                author: 'background: black; color: white',
+                github: ''
+            }
+
+            console.log(text.black + text.blue + text.author + text.github, style.black, style.blue, style.author, style.github);
+        }
+    }
+
+    signatura();
+
     if (!Element.prototype.matches)
         Element.prototype.matches = Element.prototype.msMatchesSelector || 
                                     Element.prototype.webkitMatchesSelector;
