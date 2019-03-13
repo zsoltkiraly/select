@@ -14,9 +14,6 @@
 #
 <br />
 
-#
-<br />
-
 <b>GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007</b>
 
 Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
