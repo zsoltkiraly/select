@@ -6,10 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8">
 
-    <link rel="stylesheet" href="css/demo.css">
+    <link rel="shortcut icon" href="#" />
     <link rel="stylesheet" href="css/main.css">
-
-    <script src="js/scripts.js"></script>
+    <script src="js/scripts.min.js"></script>
 </head>
 
 <body>
@@ -75,15 +74,13 @@
 
     <script type="text/javascript">
         window.addEventListener('load', function() {
-            select.app(
-                config = {
-                    selectGlobalClass: 'select',
-                    selectOneExpand: true,
-                    selectAllClose: true,
-                    selectOpenAlways: false,
-                    defaultTag: ''
-                }
-            );
+            select.app({
+                selectGlobalClass: 'select',
+                selectOneExpand: true,
+                selectAllClose: true,
+                selectOpenAlways: false,
+                defaultTag: ''
+            })
         })
     </script>
 

@@ -3,6 +3,7 @@ Select - Code by Zsolt Kiraly
 v1.1.0 - 2019-01-15
 */
 
+'use scrict'
 var select = function() {
 
     function signatura() {
